@@ -107,8 +107,7 @@ def _get_jwt(user_data):
     exp_time = datetime.datetime.utcnow() + datetime.timedelta(weeks=2)
     payload = {'exp': exp_time,
                'nbf': datetime.datetime.utcnow(),
-               'email': user_data['email'],
-               'things': 'stuff'}
+               'email': user_data['email']}
     return jwt.encode(payload, JWT_SECRET, algorithm='HS256')
 
 if __name__ == '__main__':
